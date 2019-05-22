@@ -118,7 +118,10 @@ public class GenerateReports {
 			
 			f.mkdirs();
 			path=System.getProperty("user.dir")+"\\Results\\"+sdf.format(new Date()).replace("/", "")+"\\"+TestNGListeners.crntclass;
-		}
+		}else
+			 {
+				path=System.getProperty("user.dir")+"\\Results\\"+sdf.format(new Date()).replace("/", "")+"\\"+TestNGListeners.crntclass;
+			}
 		
 		return path;
 	}

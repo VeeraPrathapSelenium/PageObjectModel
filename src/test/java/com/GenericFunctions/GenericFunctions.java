@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -48,30 +49,26 @@ public class GenericFunctions extends TestNGListeners {
 		
 		boolean status=true;
 		
+		String url=getCommontestdata("Url");
 		
 		switch (browser.toLowerCase()) {
-		case "ie":
-			
-			break;
-
+	
 		case "firefox":
 			
 			driver= new FirefoxDriver();
-			
-			String url=getCommontestdata("Url");
-			
-		//	System.out.println(url);
+	
 			
 			driver.get(url);
 			
-			driver.manage().window().maximize();
-			
-			//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			
 			
 			break;
 			
 		case "chrome":
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+			
+			driver=new ChromeDriver();
+			driver.get(url);
 			
 			break;
 			
@@ -80,7 +77,8 @@ public class GenericFunctions extends TestNGListeners {
 		default:
 			break;
 		}
-		
+		driver.manage().window().maximize();	
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	return status;	
 		
 	}
@@ -184,9 +182,9 @@ public class GenericFunctions extends TestNGListeners {
 		
 	}
 	
-	public static void waitForElement(WebElement element)
+	public static boolean waitForElement(WebElement element)
 	{
-	
+	boolean status=false;
 		for(int i=1;i<=10;i++)
 		{
 		try
@@ -196,6 +194,7 @@ public class GenericFunctions extends TestNGListeners {
 			acc.moveToElement(element).build().perform();
 			
 			System.out.println("Element Found");
+			status=true;
 			break;
 			
 		}
@@ -210,7 +209,8 @@ public class GenericFunctions extends TestNGListeners {
 			}
 			
 		}
-		}	
+		}
+		return status;	
 		
 	}
 	
@@ -248,5 +248,33 @@ public class GenericFunctions extends TestNGListeners {
 		js.executeScript("arguments[0].click();", element);
 		
 	}
+	
+	
+	public static boolean clickAndSendData(WebElement element,String data)
+	{
+	boolean status=true;
+		
+		try
+		{
+			waitForElement(element);
+			Actions acc=new Actions(driver);
+			acc.moveToElement(element).click().build().perform();
+			element.clear();
+			element.sendKeys(data);
+		
+			
+			
+		}
+		catch(Exception e)
+		{
+			
+			status=false;
+		
+		}	
+		
+	
+	
+	return status;
+	}	
 
 }

@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="28819" started-at="2018-01-06T02:43:16Z" finished-at="2018-01-06T02:43:45Z">
+  <suite name="Suite" duration-ms="35396" started-at="2019-05-22T05:00:29Z" finished-at="2019-05-22T05:01:04Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="28819" started-at="2018-01-06T02:43:16Z" finished-at="2018-01-06T02:43:45Z">
+    <test name="Test" duration-ms="35396" started-at="2019-05-22T05:00:29Z" finished-at="2019-05-22T05:01:04Z">
       <class name="com.TestCases.Tc_01_ValidateLoginCredentials">
-        <test-method status="PASS" signature="Tc_01_ValidateLoginCredentials()[pri:0, instance:com.TestCases.Tc_01_ValidateLoginCredentials@3ffc5af1]" name="Tc_01_ValidateLoginCredentials" duration-ms="27698" started-at="2018-01-06T08:13:17Z" finished-at="2018-01-06T08:13:45Z">
+        <test-method status="PASS" signature="Tc_01_ValidateLoginCredentials()[pri:0, instance:com.TestCases.Tc_01_ValidateLoginCredentials@3532ec19]" name="Tc_01_ValidateLoginCredentials" duration-ms="16850" started-at="2019-05-22T10:30:30Z" finished-at="2019-05-22T10:30:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Tc_01_ValidateLoginCredentials -->
       </class> <!-- com.TestCases.Tc_01_ValidateLoginCredentials -->
+      <class name="com.TestCases.Tc_02_RegisterNewUser">
+        <test-method status="PASS" signature="Tc_01_ValidateLoginCredentials()[pri:0, instance:com.TestCases.Tc_02_RegisterNewUser@59f99ea]" name="Tc_01_ValidateLoginCredentials" duration-ms="17176" started-at="2019-05-22T10:30:47Z" finished-at="2019-05-22T10:31:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tc_01_ValidateLoginCredentials -->
+      </class> <!-- com.TestCases.Tc_02_RegisterNewUser -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
