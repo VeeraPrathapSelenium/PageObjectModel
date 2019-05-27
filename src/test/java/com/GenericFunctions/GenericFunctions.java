@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.codoid.products.exception.FilloException;
@@ -277,4 +278,35 @@ public class GenericFunctions extends TestNGListeners {
 	return status;
 	}	
 
+	
+	
+	
+	
+	public static boolean selectDropDOwn(WebElement element,String data)
+	{
+	boolean status=true;
+		
+		try
+		{
+			waitForElement(element);
+			Select slct=new Select(element);
+			
+			slct.selectByValue(data);
+			
+			
+		}
+		catch(Exception e)
+		{
+			
+			status=false;
+		
+		}	
+		
+	
+	
+	return status;
+	}		
+	
+	
+	
 }

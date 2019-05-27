@@ -13,7 +13,7 @@
   
   <classes>
   
-  <class name="com.TestCases.Tc_01_ValidateLoginCredentials"></class>
+ <!--   <class name="com.TestCases.Tc_01_ValidateLoginCredentials"></class>-->
   <class name="com.TestCases.Tc_02_RegisterNewUser"></class>
   </classes>
   

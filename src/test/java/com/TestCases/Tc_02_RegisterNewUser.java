@@ -33,8 +33,25 @@ public class Tc_02_RegisterNewUser extends GenericFunctions {
 		if(status)
 		{
 			Authentication auth=PageFactory.initElements(driver, Authentication.class);
-			auth.enter_EmailId_NewUser();
+			status=auth.enter_EmailId_NewUser();
 			
+			
+			System.out.println("**************************************");
+	if(status)
+	{
+		status=auth.enter_UserDaetails();
+		
+		if(status)
+		{
+			status=auth.logout();
+			
+			if(status)
+			{
+				auth.login_AlreadyRegisterd();
+			}
+		}
+	}
+		
 		}
 	}
 	
